@@ -1,0 +1,455 @@
+<!-- wp:html -->
+<div class="optipc-scope">
+<style>
+.optipc-scope {
+  --orange:#F97316; --orange-dark:#C2410C; --purple:#8B5CF6; --purple-dark:#6D28D9;
+  --bg:#FAFAF9; --bg-alt:#F1F0EE; --text:#1C1917; --text-soft:#44403C; --white:#FFFFFF;
+  --border:#E7E5E4; --radius:16px; --shadow:0 4px 20px rgba(28,25,23,0.08);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --dark-bg:#150C24; --dark-bg2:#0E0818; --dark-card:#241238; --dark-card2:#1A0E2C;
+  --dark-border:#3B2A63; --dark-text:#F6F3FF; --dark-text-soft:#C6BBE6;
+}
+.optipc-scope, .optipc-scope * { box-sizing:border-box; }
+.optipc-scope { scroll-behavior:smooth; margin:0; font-family:var(--font); background:var(--bg); color:var(--text); font-size:18px; line-height:1.6; }
+.optipc-scope img { max-width:100%; display:block; }
+.optipc-scope a { color:var(--purple-dark); }
+.optipc-scope .container { max-width:1440px; margin:0 auto; padding:0 24px; }
+.optipc-scope h1, .optipc-scope h2, .optipc-scope h3 { line-height:1.25; margin:0 0 16px 0; color:var(--text) !important; }
+.optipc-scope h1 { font-size:clamp(32px,4vw,48px); }
+.optipc-scope h2 { font-size:clamp(26px,3vw,34px); text-align:center; }
+.optipc-scope h3 { font-size:22px; }
+.optipc-scope p { margin:0 0 16px 0; }
+.optipc-scope section { padding:64px 0; }
+.optipc-scope .section-alt { background:var(--bg-alt); }
+.optipc-scope .dark-section { background:var(--dark-bg); color:var(--dark-text); }
+.optipc-scope .dark-section h2, .optipc-scope .dark-section h3 { color:var(--dark-text) !important; }
+.optipc-scope .dark-section .lead { color:var(--dark-text-soft); }
+.optipc-scope .dark-section p { color:var(--dark-text-soft); }
+.optipc-scope .eyebrow { display:inline-block; color:var(--purple-dark); font-weight:700; letter-spacing:0.04em; text-transform:uppercase; font-size:15px; margin-bottom:12px; }
+.optipc-scope .dark-section .eyebrow, .optipc-scope .hero.dark-hero .eyebrow { color:#D8B4FE; }
+.optipc-scope .lead { font-size:20px; color:var(--text-soft); text-align:center; max-width:720px; margin:0 auto 48px auto; }
+.optipc-scope .skip-link { position:absolute; left:-9999px; top:0; background:var(--white); color:var(--text); padding:12px 20px; z-index:200; border-radius:8px; font-weight:700; }
+.optipc-scope .skip-link:focus { left:16px; top:16px; }
+.optipc-scope .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:14px 32px; border-radius:999px; font-size:19px; font-weight:700; text-decoration:none; border:2px solid transparent; cursor:pointer; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; }
+.optipc-scope .btn:hover { transform:translateY(-1px); }
+.optipc-scope .btn:focus-visible { outline:3px solid var(--purple-dark); outline-offset:3px; }
+.optipc-scope .btn-primary { background:linear-gradient(135deg,var(--orange),var(--orange-dark)); color:#fff; box-shadow:0 8px 22px rgba(194,65,12,0.38); }
+.optipc-scope .btn-primary:hover { background:linear-gradient(135deg,#fb923c,#a8380a); }
+.optipc-scope .btn-secondary { background:var(--white); color:var(--text); border-color:var(--border); }
+.optipc-scope .btn-secondary:hover { border-color:var(--purple); }
+.optipc-scope .dark-section .btn-secondary, .optipc-scope .hero.dark-hero .btn-secondary, .optipc-scope .price-card.dark .btn-secondary { background:rgba(255,255,255,0.06); color:#fff; border-color:rgba(255,255,255,0.28); }
+.optipc-scope .dark-section .btn-secondary:hover, .optipc-scope .hero.dark-hero .btn-secondary:hover, .optipc-scope .price-card.dark .btn-secondary:hover { border-color:var(--orange); background:rgba(255,255,255,0.12); }
+.optipc-scope .btn-block { width:100%; }
+.optipc-scope .pill { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.22); color:#fff; padding:7px 16px; border-radius:999px; font-size:14px; font-weight:700; }
+.optipc-scope .pill-light { background:#FFF1E6; border:1px solid #FED7AA; color:var(--orange-dark); }
+/* Topbar */
+.optipc-scope .topbar { position:sticky; top:0; z-index:100; background:rgba(14,8,24,0.95); border-bottom:1px solid var(--dark-border); backdrop-filter:blur(8px); }
+.optipc-scope .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 24px; flex-wrap:wrap; max-width:1440px; margin:0 auto; }
+.optipc-scope .brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:#fff; flex-shrink:0; }
+.optipc-scope .brand-name { font-weight:800; font-size:22px; color:#fff; }
+.optipc-scope .brand-name span { color:var(--orange); }
+.optipc-scope .topbar-nav { display:flex; align-items:center; gap:28px; flex-wrap:wrap; list-style:none; margin:0; padding:0; }
+.optipc-scope .topbar-nav a { color:#E7E5E4; text-decoration:none; font-weight:600; font-size:15px; white-space:nowrap; }
+.optipc-scope .topbar-nav a:hover { color:#fff; }
+.optipc-scope .topbar-nav a.is-current { color:var(--orange); }
+.optipc-scope .topbar-actions { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+@media (max-width:1100px) { .optipc-scope .topbar-nav { display:none; } }
+.optipc-scope .phone-link { display:flex; align-items:center; gap:10px; text-decoration:none; color:#fff; font-weight:700; font-size:18px; white-space:nowrap; }
+.optipc-scope .phone-link strong { color:var(--orange); font-size:22px; }
+.optipc-scope .phone-icon { width:34px; height:34px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+/* Hero */
+.optipc-scope .hero { padding:64px 0 80px 0; }
+.optipc-scope .hero.dark-hero { position:relative; overflow:hidden; background:
+  radial-gradient(circle at 15% 10%, rgba(139,92,246,0.38), transparent 55%),
+  radial-gradient(circle at 85% 75%, rgba(249,115,22,0.30), transparent 50%),
+  var(--dark-bg2); color:var(--dark-text); }
+.optipc-scope .hero.dark-hero h1 { color:#fff !important; }
+.optipc-scope .hero-grid { position:relative; z-index:2; display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; }
+.optipc-scope .hero h1 { margin-bottom:20px; }
+.optipc-scope .hero-lead { font-size:21px; color:var(--dark-text-soft); margin-bottom:32px; }
+.optipc-scope .hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
+.optipc-scope .hero-trust { margin-top:28px; display:flex; gap:24px; flex-wrap:wrap; color:var(--dark-text-soft); font-size:16px; padding:0; }
+.optipc-scope .hero-trust li { display:flex; align-items:center; gap:8px; list-style:none; }
+.optipc-scope .hero-media { position:relative; }
+.optipc-scope .hero-media-frame { position:relative; border-radius:20px; padding:3px; background:linear-gradient(135deg,var(--purple),var(--orange)); box-shadow:0 20px 60px rgba(0,0,0,0.45); }
+.optipc-scope .hero-media img { border-radius:18px; display:block; }
+.optipc-scope .hero-floating-badge { position:absolute; top:-18px; right:-14px; background:var(--dark-card); border:1px solid var(--dark-border); border-radius:14px; padding:14px 18px; box-shadow:0 10px 30px rgba(0,0,0,0.4); font-size:14px; z-index:3; }
+.optipc-scope .hero-floating-badge strong { display:block; color:#fff; font-size:15px; }
+.optipc-scope .hero-floating-badge span { color:var(--dark-text-soft); }
+.optipc-scope .icon-dot { width:22px; height:22px; border-radius:50%; background:#DCFCE7; color:#15803D; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:14px; font-weight:900; }
+.optipc-scope .icon-dot.on-dark { background:rgba(74,222,128,0.18); color:#4ADE80; }
+/* Cards 3 */
+.optipc-scope .cards-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.optipc-scope .card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:32px; box-shadow:var(--shadow); }
+.optipc-scope .card-icon { width:56px; height:56px; border-radius:14px; background:#FFF1E6; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:26px; }
+.optipc-scope .card p { color:var(--text-soft); margin-bottom:0; font-size:17px; }
+/* Steps */
+.optipc-scope .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:step; }
+.optipc-scope .step { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:32px; position:relative; }
+.optipc-scope .step-number { width:44px; height:44px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin-bottom:16px; }
+.optipc-scope .step p { color:var(--text-soft); margin-bottom:0; }
+/* Explain table (ce que fait OptiPC) */
+.optipc-scope .table-explain-wrap { max-width:900px; margin:0 auto; }
+.optipc-scope table.explain { width:100%; border-collapse:separate; border-spacing:0; }
+.optipc-scope table.explain caption { text-align:left; margin-bottom:20px; color:var(--text-soft); font-size:15px; }
+.optipc-scope table.explain thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; padding:0; margin:-1px; }
+.optipc-scope table.explain tbody tr { display:block; background:var(--white); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px 28px; margin-bottom:16px; }
+.optipc-scope table.explain tbody tr:last-child { margin-bottom:0; }
+.optipc-scope table.explain th[scope="row"] { display:flex; align-items:center; gap:14px; text-align:left; font-size:19px; font-weight:800; color:var(--text); padding:0 0 10px 0; border:0; }
+.optipc-scope table.explain .explain-ico { width:42px; height:42px; border-radius:11px; background:#FFF1E6; display:flex; align-items:center; justify-content:center; font-size:21px; flex-shrink:0; }
+.optipc-scope table.explain td { display:block; padding:0; border:0; color:var(--text-soft); font-size:17px; padding-left:56px; }
+@media (min-width:760px) {
+  .optipc-scope table.explain tbody tr { display:grid; grid-template-columns:360px 1fr; align-items:center; gap:24px; padding:22px 28px; }
+  .optipc-scope table.explain th[scope="row"] { padding:0; }
+  .optipc-scope table.explain td { padding-left:0; }
+}
+/* Comparatif */
+.optipc-scope .compare-banner { max-width:820px; margin:0 auto 40px auto; background:linear-gradient(135deg,#FFF1E6,#F1E9FF); border:1px solid var(--border); border-radius:var(--radius); padding:20px 28px; text-align:center; font-size:19px; font-weight:700; }
+.optipc-scope .compare-banner .free-word { color:var(--purple-dark); }
+.optipc-scope .compare-banner .pro-word { color:var(--orange-dark); }
+.optipc-scope .table-wrap { overflow-x:auto; background:var(--white); border-radius:var(--radius); border:1px solid var(--border); box-shadow:var(--shadow); }
+.optipc-scope table.compare { width:100%; border-collapse:collapse; min-width:640px; }
+.optipc-scope table.compare caption { text-align:left; padding:20px 24px 0 24px; font-size:15px; color:var(--text-soft); }
+.optipc-scope table.compare th, .optipc-scope table.compare td { padding:16px 20px; text-align:left; border-bottom:1px solid var(--border); font-size:17px; }
+.optipc-scope table.compare thead th { background:var(--bg-alt); font-size:18px; }
+.optipc-scope table.compare th:not(:first-child), .optipc-scope table.compare td:not(:first-child) { text-align:center; width:150px; }
+.optipc-scope table.compare tbody tr:last-child td { border-bottom:none; }
+.optipc-scope .col-pro { background:#FFF8F2; }
+.optipc-scope .mark-yes { color:#15803D; font-weight:900; font-size:20px; }
+.optipc-scope .mark-no { color:#A8A29E; font-weight:700; font-size:20px; }
+/* Tarifs */
+.optipc-scope .pricing { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; align-items:stretch; }
+.optipc-scope .price-card { border-radius:var(--radius); padding:32px 26px; display:flex; flex-direction:column; position:relative; }
+.optipc-scope .price-card.light { background:var(--white); border:2px solid var(--border); box-shadow:var(--shadow); }
+.optipc-scope .price-card.dark { background:linear-gradient(180deg,var(--dark-card),var(--dark-card2)); border:2px solid var(--dark-border); color:var(--dark-text); box-shadow:0 12px 34px rgba(0,0,0,0.35); }
+.optipc-scope .price-card.dark p, .optipc-scope .price-card.dark .price-fine { color:var(--dark-text-soft); }
+.optipc-scope .price-card.featured { border-color:var(--orange); position:relative; transform:translateY(-8px); }
+.optipc-scope .badge { position:absolute; top:-16px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,var(--orange),var(--orange-dark)); color:#fff; font-size:14px; font-weight:800; padding:8px 18px; border-radius:999px; white-space:nowrap; }
+.optipc-scope .badge-promo { position:absolute; top:-14px; right:14px; background:linear-gradient(135deg,#DC2626,#991B1B); color:#fff; font-size:12px; font-weight:800; padding:6px 14px; border-radius:999px; white-space:nowrap; text-transform:uppercase; letter-spacing:0.03em; box-shadow:0 6px 16px rgba(153,27,27,0.45); z-index:2; }
+.optipc-scope .price-old { text-decoration:line-through; color:var(--dark-text-soft); font-weight:600; font-size:20px; margin-right:8px; opacity:0.75; }
+.optipc-scope .ribbon-corner { position:absolute; top:0; left:0; width:105px; height:105px; overflow:hidden; z-index:2; pointer-events:none; }
+.optipc-scope .ribbon-corner .badge { position:absolute; top:14px; left:-34px; width:140px; text-align:center; transform:rotate(-45deg); border-radius:0; font-size:14px; padding:5px 0; }
+.optipc-scope .price-name { font-weight:800; font-size:19px; margin-bottom:4px; text-align:center; }
+.optipc-scope .price-amount { font-size:36px; font-weight:900; margin:12px 0 0 0; }
+.optipc-scope .price-amount small { font-size:16px; font-weight:600; color:var(--text-soft); }
+.optipc-scope .price-card.dark .price-amount small { color:var(--dark-text-soft); }
+.optipc-scope .price-note { color:var(--purple-dark); font-weight:700; margin:8px 0 16px 0; min-height:22px; font-size:15px; }
+.optipc-scope .price-card.dark .price-note { color:#D8B4FE; }
+.optipc-scope .price-fine { color:var(--text-soft); font-size:14px; margin-top:14px; }
+.optipc-scope .price-card .btn { margin-top:auto; }
+.optipc-scope .price-feature-list { list-style:none; margin:0 0 18px 0; padding:0; }
+.optipc-scope .price-feature-list li { display:flex; gap:8px; align-items:flex-start; margin-bottom:8px; font-size:14px; color:var(--text-soft); }
+.optipc-scope .price-card.dark .price-feature-list li { color:var(--dark-text-soft); }
+.optipc-scope .price-feature-list li::before { content:"✓"; color:#15803D; font-weight:900; flex-shrink:0; }
+.optipc-scope .price-card.dark .price-feature-list li::before { color:#4ADE80; }
+.optipc-scope .pricing .price-card:nth-child(4) .price-name { font-size:23px; }
+.optipc-scope .pro-perks { max-width:900px; margin:40px auto 0 auto; text-align:center; }
+.optipc-scope .pro-perks h4 { color:#fff; font-size:16px; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:18px; }
+.optipc-scope .pro-perks-list { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; padding:0; margin:0; list-style:none; }
+.optipc-scope .phone-order { text-align:center; margin-top:40px; font-size:19px; }
+.optipc-scope .dark-section .phone-order a { color:var(--orange); }
+/* Anti-arnaque */
+.optipc-scope .scam-box { max-width:920px; margin:0 auto; background:#FFFFFF; border:3px solid var(--purple); border-radius:var(--radius); padding:40px; box-shadow:var(--shadow); }
+.optipc-scope .scam-box-head { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+.optipc-scope .scam-icon { width:56px; height:56px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-size:28px; flex-shrink:0; }
+.optipc-scope .scam-box h3 { margin:0; }
+.optipc-scope .scam-list { margin:0 0 20px 0; padding:0; list-style:none; }
+.optipc-scope .scam-list li { display:flex; gap:12px; align-items:flex-start; margin-bottom:14px; font-size:18px; }
+.optipc-scope .scam-list li::before { content:"✕"; color:#B91C1C; font-weight:900; flex-shrink:0; }
+.optipc-scope .scam-callout { background:#F1E9FF; border-radius:12px; padding:20px; font-size:18px; font-weight:600; }
+/* FAQ */
+.optipc-scope .faq { max-width:820px; margin:0 auto; }
+.optipc-scope details.faq-item { background:var(--white); border:1px solid var(--border); border-radius:12px; margin-bottom:16px; padding:0; box-shadow:var(--shadow); }
+.optipc-scope details.faq-item summary { list-style:none; cursor:pointer; padding:22px 28px; font-weight:700; font-size:19px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.optipc-scope details.faq-item summary::-webkit-details-marker { display:none; }
+.optipc-scope details.faq-item summary::after { content:"+"; font-size:28px; font-weight:400; color:var(--purple-dark); flex-shrink:0; }
+.optipc-scope details.faq-item[open] summary::after { content:"–"; }
+.optipc-scope details.faq-item .faq-answer { padding:0 28px 24px 28px; color:var(--text-soft); font-size:17px; }
+.optipc-scope details.faq-item summary:focus-visible { outline:3px solid var(--purple-dark); outline-offset:2px; }
+/* Responsive */
+@media (max-width:1080px) and (min-width:641px) { .optipc-scope .pricing { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:920px) {
+  .optipc-scope .hero-grid { grid-template-columns:1fr; }
+  .optipc-scope .hero-media { order:-1; margin-top:24px; }
+  .optipc-scope .cards-3, .optipc-scope .steps { grid-template-columns:1fr; }
+  .optipc-scope .price-card.featured { transform:none; }
+  .optipc-scope section { padding:48px 0; }
+  .optipc-scope .topbar-inner { justify-content:center; text-align:center; }
+}
+@media (max-width:640px) { .optipc-scope .pricing { grid-template-columns:1fr; } }
+@media (max-width:480px) {
+  .optipc-scope { font-size:17px; }
+  .optipc-scope .btn { width:100%; }
+  .optipc-scope .hero-actions { flex-direction:column; }
+}
+</style>
+<a href="#contenu" class="skip-link">Aller au contenu principal</a>
+<main id="contenu">
+<!-- HERO -->
+<section class="hero dark-hero">
+<div class="container hero-grid">
+<div>
+<p class="eyebrow">Logiciel de récupération de fichiers pour Windows</p>
+<h1>Photos ou documents effacés par erreur&nbsp;? Retrouvez-les avec SecureeTech Recovery</h1>
+<p class="hero-lead">SecureeTech Recovery cherche vos fichiers supprimés — photos de famille, documents, vidéos — sur votre ordinateur, une clé USB ou la carte de votre appareil photo. Vous dites ce que vous avez perdu, le logiciel cherche partout, et vous voyez ce qu'il a retrouvé avant de récupérer quoi que ce soit.</p>
+<div class="hero-actions">
+<a href="https://github.com/secureetech/secureetech-recovery-download/raw/main/telechargement/SecureeTechRecovery-Setup.exe" class="btn btn-primary" download="" target="_blank" rel="noopener">Télécharger gratuitement</a>
+<a href="#prix-recovery" class="btn btn-secondary" onclick="event.preventDefault();event.stopImmediatePropagation();document.getElementById('prix-recovery').scrollIntoView({behavior:'smooth'});return false;">Voir les tarifs</a>
+</div><p class="st-essai-promo" style="margin:16px 0 0;font-size:16px;font-weight:600;color:#FBBF24;">🎁 Recherche gratuite et illimitée — 5 jours de version Pro offerts, sans carte bancaire</p>
+<ul class="hero-trust">
+<li><span class="icon-dot on-dark" aria-hidden="true">✓</span> Windows 10 et 11</li>
+<li><span class="icon-dot on-dark" aria-hidden="true">✓</span> Logiciel signé et sécurisé</li>
+<li><span class="icon-dot on-dark" aria-hidden="true">✓</span> Assistance en français</li>
+</ul>
+</div>
+<div class="hero-media">
+<div class="hero-media-frame">
+<div style="border-radius:18px;overflow:hidden;background:#F6F3FA;font-family:'Segoe UI',Arial,sans-serif;" role="img" aria-label="Aperçu de SecureeTech Recovery : 312 photos retrouvées, avec cases à cocher et bouton Récupérer">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:linear-gradient(120deg,#0E011D,#2A0C52);color:#fff;">
+<span style="font-weight:800;font-size:17px;">SecureeTech <span style="font-weight:400;color:#FFB15C;">Recovery</span></span>
+<span style="font-size:13px;color:#E1D7F5;">Besoin d'aide ? <strong style="color:#fff;">05 54 54 23 43</strong></span>
+</div>
+<div style="height:4px;background:linear-gradient(90deg,#F07800,#2A0C52);"></div>
+<div style="padding:18px;">
+<p style="margin:0 0 4px;font-size:20px;font-weight:800;color:#1A0B33;">Bonne nouvelle : 312 photos retrouvées</p>
+<p style="margin:0 0 14px;font-size:14px;color:#4A3D63;">Cochez celles que vous voulez récupérer.</p>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;">
+<div style="background:#fff;border:2px solid #F07800;border-radius:10px;padding:6px;"><div style="height:54px;border-radius:6px;background:#DCE6F2;"></div><p style="margin:6px 0 0;font-size:11px;font-weight:700;color:#1E6B3F;">✓ Intacte</p></div>
+<div style="background:#fff;border:2px solid #F07800;border-radius:10px;padding:6px;"><div style="height:54px;border-radius:6px;background:#E8E1D6;"></div><p style="margin:6px 0 0;font-size:11px;font-weight:700;color:#1E6B3F;">✓ Intacte</p></div>
+<div style="background:#fff;border:2px solid #DCD3EA;border-radius:10px;padding:6px;"><div style="height:54px;border-radius:6px;background:#DDEBE0;"></div><p style="margin:6px 0 0;font-size:11px;font-weight:700;color:#1E6B3F;">Intacte</p></div>
+<div style="background:#fff;border:2px solid #F07800;border-radius:10px;padding:6px;"><div style="height:54px;border-radius:6px;background:#EADCE4;"></div><p style="margin:6px 0 0;font-size:11px;font-weight:700;color:#1E6B3F;">✓ Intacte</p></div>
+</div>
+<div style="display:flex;justify-content:flex-end;margin-top:14px;"><span style="display:inline-block;background:#D96A00;color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:10px;">Récupérer 3 photos</span></div>
+</div>
+</div>
+<div class="hero-floating-badge">
+<strong>Recherche gratuite</strong>
+<span>Voyez ce qui est retrouvé avant de payer</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- OU VONT LES FICHIERS -->
+<section class="section-alt" aria-labelledby="titre-efface">
+<div class="container">
+<h2 id="titre-efface">Un fichier supprimé n'est pas toujours perdu</h2>
+<p class="lead">Quand vous supprimez un fichier, Windows ne l'efface souvent pas tout de suite : il marque seulement sa place comme libre. Tant que rien n'est écrit par-dessus, on peut encore le retrouver.</p>
+<div class="cards-3">
+<div class="card">
+<div class="card-icon" aria-hidden="true">🗑️</div>
+<h3>La corbeille a été vidée</h3>
+<p>Des photos supprimées puis la corbeille vidée « pour faire de la place » : c'est la situation la plus fréquente, et souvent la plus facile à rattraper.</p>
+</div>
+<div class="card">
+<div class="card-icon" aria-hidden="true">💾</div>
+<h3>Une clé USB ou une carte effacée</h3>
+<p>Un appareil photo qui formate la carte, une clé USB « à formater » : les photos sont souvent encore là, cachées dans la mémoire.</p>
+</div>
+<div class="card">
+<div class="card-icon" aria-hidden="true">📄</div>
+<h3>Un document disparu ou écrasé</h3>
+<p>Un courrier enregistré par-dessus, un dossier supprimé par mégarde : Windows en garde parfois une ancienne version que l'on peut récupérer.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CE QUE FAIT LE LOGICIEL -->
+<section aria-labelledby="titre-fonctions">
+<div class="container">
+<p class="eyebrow" style="display:block;text-align:center;">Ce que fait le logiciel</p>
+<h2 id="titre-fonctions">Ce que SecureeTech Recovery fait concrètement pour retrouver vos fichiers</h2>
+<p class="lead">Pas de jargon : voici, situation par situation, ce que le logiciel vérifie pour vous.</p>
+<div class="table-explain-wrap">
+<table class="explain">
+<caption>Ce que fait SecureeTech Recovery, situation par situation</caption>
+<thead><tr><th scope="col">Ce qui vous est arrivé</th><th scope="col">Ce que fait SecureeTech Recovery</th></tr></thead>
+<tbody>
+<tr><th scope="row"><span class="explain-ico" aria-hidden="true">🗑️</span> J'ai vidé la corbeille</th><td>Il fouille la corbeille de Windows et l'espace où se trouvaient vos fichiers, puis vous les montre avec leur nom quand c'est possible.</td></tr>
+<tr><th scope="row"><span class="explain-ico" aria-hidden="true">🕰️</span> J'ai écrasé ou perdu un document</th><td>Il cherche dans les anciennes versions que Windows garde de vos dossiers personnels (Bureau, Documents, Images).</td></tr>
+<tr><th scope="row"><span class="explain-ico" aria-hidden="true">💾</span> Ma clé USB ou ma carte SD est vide</th><td>Il analyse la clé ou la carte en profondeur, même après un formatage, et reconnaît les photos, vidéos et documents à leur contenu.</td></tr>
+<tr><th scope="row"><span class="explain-ico" aria-hidden="true">🔍</span> Je ne sais pas ce que j'ai perdu</th><td>Choisissez « Je ne sais pas » : il cherche à la fois les photos, les documents et les vidéos.</td></tr>
+<tr><th scope="row"><span class="explain-ico" aria-hidden="true">🖼️</span> Je veux être sûr avant de récupérer</th><td>Les photos s'affichent en vignettes, chaque fichier est marqué « Intact » ou « Peut-être abîmé », et un double-clic l'ouvre en grand.</td></tr>
+<tr><th scope="row"><span class="explain-ico" aria-hidden="true">🛟</span> J'ai peur d'aggraver les choses</th><td>Rien n'est modifié à l'endroit où l'on cherche : les fichiers sont toujours copiés ailleurs, dans un dossier « Fichiers récupérés SecureeTech » sur votre Bureau.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- COMMENT CA MARCHE -->
+<section class="section-alt" aria-labelledby="titre-marche">
+<div class="container">
+<h2 id="titre-marche">Comment ça marche</h2>
+<p class="lead">Trois étapes simples, avec de gros boutons et des phrases claires.</p>
+<div class="steps">
+<div class="step">
+<div class="step-number" aria-hidden="true">1</div>
+<h3>Vous dites ce que vous avez perdu</h3>
+<p>Des photos, des documents, des vidéos, ou « je ne sais pas ». Puis vous choisissez où : l'ordinateur, une clé USB ou une carte.</p>
+</div>
+<div class="step">
+<div class="step-number" aria-hidden="true">2</div>
+<h3>Le logiciel cherche partout</h3>
+<p>La corbeille, les anciennes versions de Windows, puis le disque lui-même. Vous voyez le nombre de fichiers retrouvés augmenter en direct.</p>
+</div>
+<div class="step">
+<div class="step-number" aria-hidden="true">3</div>
+<h3>Vous cochez et vous récupérez</h3>
+<p>Vous choisissez les fichiers à garder : ils sont copiés sur votre Bureau, rangés en Photos, Documents et Vidéos. C'est terminé.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- BON A SAVOIR -->
+<section aria-labelledby="titre-conseils">
+<div class="container">
+<div class="scam-box">
+<div class="scam-box-head">
+<span class="scam-icon" aria-hidden="true">💡</span>
+<h3 id="titre-conseils">Bon à savoir pour mettre toutes les chances de votre côté</h3>
+</div>
+<ul class="scam-list">
+<li>N'enregistrez rien de nouveau sur l'ordinateur ou la clé en attendant : chaque nouveau fichier peut prendre la place de celui que vous cherchez.</li>
+<li>Plus vous agissez tôt, plus les chances sont bonnes.</li>
+<li>Pour chercher en profondeur sur l'ordinateur, gardez une clé USB sous la main : les fichiers retrouvés y sont déposés, pour ne rien écraser.</li>
+<li>Sur les ordinateurs récents équipés d'un disque « SSD », Windows efface vite et définitivement les fichiers supprimés. Le logiciel cherche quand même partout, mais aucun logiciel ne peut garantir de tout retrouver.</li>
+</ul>
+<p class="scam-callout">Vous ne retrouvez pas un fichier important ? Appelez-nous au 05 54 54 23 43 avant de faire quoi que ce soit d'autre : nous vous dirons quoi faire.</p>
+</div>
+</div>
+</section>
+<!-- COMPARATIF -->
+<section class="section-alt" aria-labelledby="titre-comparatif">
+<div class="container">
+<h2 id="titre-comparatif">Gratuit ou Pro : ce qui change</h2>
+<p class="lead">Les deux versions cherchent partout, sans limite. La différence se joue sur le nombre de fichiers que vous pouvez récupérer.</p>
+<div class="compare-banner">La version <span class="free-word">Gratuite TROUVE</span> — la version <span class="pro-word">Pro RÉCUPÈRE TOUT</span></div>
+<div class="table-wrap">
+<table class="compare">
+<caption>Comparatif des fonctions incluses dans chaque version de SecureeTech Recovery</caption>
+<thead><tr><th scope="col">Fonction</th><th scope="col">Gratuit</th><th scope="col" class="col-pro">Pro</th></tr></thead>
+<tbody>
+<tr><td>Recherche dans la corbeille et les anciennes versions</td><td><span class="mark-yes">✓</span></td><td class="col-pro"><span class="mark-yes">✓</span></td></tr>
+<tr><td>Analyse de l'ordinateur, des clés USB et des cartes SD</td><td><span class="mark-yes">✓</span></td><td class="col-pro"><span class="mark-yes">✓</span></td></tr>
+<tr><td>Recherche approfondie (même après un formatage)</td><td><span class="mark-yes">✓</span></td><td class="col-pro"><span class="mark-yes">✓</span></td></tr>
+<tr><td>Aperçu des photos et état de chaque fichier</td><td><span class="mark-yes">✓</span></td><td class="col-pro"><span class="mark-yes">✓</span></td></tr>
+<tr><td>Récupération des fichiers retrouvés</td><td>3 offerts</td><td class="col-pro">Illimitée</td></tr>
+<tr><td>Assistance téléphonique prioritaire</td><td><span class="mark-no">–</span></td><td class="col-pro"><span class="mark-yes">✓</span></td></tr>
+<tr><td>Mises à jour incluses</td><td><span class="mark-yes">✓</span></td><td class="col-pro"><span class="mark-yes">✓</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- TARIFS -->
+<section id="prix-recovery" class="dark-section" aria-labelledby="titre-tarifs">
+<div class="container">
+<p class="eyebrow" style="display:block;text-align:center;">Sans engagement, résiliable à tout moment</p>
+<h2 id="titre-tarifs">Nos tarifs</h2>
+<p class="lead">Le téléchargement et la recherche sont gratuits. Un seul abonnement Pro, trois façons de payer.</p>
+<p class="lead" style="font-size:14px;margin-top:-8px;">Offre -50% valable jusqu'au 22 mars 2027.</p>
+<div class="pricing">
+<div class="price-card dark">
+<p class="price-name">Gratuit</p>
+<p class="price-amount">0 € <small>à vie</small></p>
+<p class="price-note">&nbsp;</p>
+<p>Installez le logiciel et voyez tout de suite ce qui peut être retrouvé.</p>
+<ul class="price-feature-list"><li>Recherche illimitée</li><li>3 fichiers récupérés offerts</li><li>5 jours de version Pro offerts</li></ul>
+<p class="price-fine">Aucune carte bancaire requise.</p>
+<a href="https://github.com/secureetech/secureetech-recovery-download/raw/main/telechargement/SecureeTechRecovery-Setup.exe" class="btn btn-secondary btn-block" download="" target="_blank" rel="noopener">Télécharger gratuitement</a>
+</div>
+<div class="price-card dark">
+<span class="badge-promo">Offre limitée -50%</span>
+<p class="price-name">Mensuel</p>
+<p class="price-amount"><span class="price-old">13,80 €</span> 6,90 € <small>TTC / mois</small></p>
+<p class="price-note">&nbsp;</p>
+<p>Idéal pour une récupération ponctuelle.</p>
+<p class="price-fine">Résiliable à tout moment. Renouvellement automatique par tacite reconduction, résiliable avant échéance. Un abonnement par ordinateur.</p>
+<a href="https://buy.stripe.com/5kQ6oI6LLeKIgLOge07AL2t" class="btn btn-secondary btn-block" target="_blank" rel="noopener">Choisir le mensuel</a>
+</div>
+<div class="price-card dark featured">
+<div class="ribbon-corner"><span class="badge">Le plus choisi</span></div>
+<span class="badge-promo">Offre limitée -50%</span>
+<p class="price-name">Annuel</p>
+<p class="price-amount"><span class="price-old">99,80 €</span> 49,90 € <small>TTC / an</small></p>
+<p class="price-note">Soit 4,16 € par mois — économisez 40 %</p>
+<p>Pour être tranquille toute l'année, au moindre fichier perdu.</p>
+<p class="price-fine">Résiliable à tout moment. Renouvellement automatique par tacite reconduction, résiliable avant échéance. Un abonnement par ordinateur.</p>
+<a href="https://buy.stripe.com/bJeeVe3zzfOM0MQ5zm7AL2u" class="btn btn-primary btn-block" target="_blank" rel="noopener">Choisir l'annuel</a>
+</div>
+<div class="price-card dark">
+<span class="badge-promo">Offre limitée -50%</span>
+<p class="price-name">2 ans</p>
+<p class="price-amount"><span class="price-old">179,80 €</span> 89,90 € <small>TTC</small></p>
+<p class="price-note">Soit 3,75 € par mois</p>
+<p>Le meilleur prix pour garder le logiciel sous la main.</p>
+<p class="price-fine">Résiliable à tout moment. Renouvellement automatique par tacite reconduction, résiliable avant échéance. Un abonnement par ordinateur.</p>
+<a href="https://buy.stripe.com/cNieVe8TT5a8bru4vi7AL2v" class="btn btn-secondary btn-block" target="_blank" rel="noopener">Choisir 2 ans</a>
+</div>
+</div>
+<div class="pro-perks">
+<h4>Inclus dans l'abonnement Pro, quelle que soit la formule</h4>
+<ul class="pro-perks-list"><li>Récupération illimitée</li><li>Photos, documents et vidéos</li><li>Clés USB et cartes SD</li><li>Recherche approfondie</li><li>Assistance téléphonique prioritaire</li><li>Mises à jour incluses</li></ul>
+</div>
+<p class="phone-order">Vous préférez commander par téléphone ? Appelez le <a href="tel:+33554542343"><strong>05 54 54 23 43</strong></a>, notre équipe francophone vous répond.</p>
+</div>
+</section>
+<!-- ANTI-ARNAQUE -->
+<section class="section-alt" aria-labelledby="titre-securite">
+<div class="container">
+<div class="scam-box">
+<div class="scam-box-head">
+<span class="scam-icon" aria-hidden="true">🛡️</span>
+<h3 id="titre-securite">Votre sécurité, avant tout</h3>
+</div>
+<p>Nous savons que beaucoup de personnes ont déjà été démarchées par de faux techniciens informatiques. Voici ce que nous ne ferons jamais :</p>
+<ul class="scam-list">
+<li>Nous ne vous demanderons jamais votre mot de passe.</li>
+<li>Nous ne vous demanderons jamais les codes de votre carte bancaire par téléphone.</li>
+<li>Nous ne vous demanderons jamais de payer par carte cadeau.</li>
+</ul>
+<p class="scam-callout">Si quelqu'un vous appelle en se réclamant de SecureeTech et vous semble suspect, raccrochez et rappelez-nous vous-même au 05 54 54 23 43. Nous vérifierons avec vous.</p>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section aria-labelledby="titre-faq">
+<div class="container">
+<h2 id="titre-faq">Questions fréquentes</h2>
+<div class="faq">
+<details class="faq-item"><summary>Qu'est-ce que SecureeTech Recovery&nbsp;?</summary><div class="faq-answer">C'est un logiciel pour ordinateur Windows qui retrouve les fichiers supprimés par erreur — photos, documents, vidéos — sur l'ordinateur, une clé USB ou une carte SD. Il a été pensé pour être simple, même sans connaissances en informatique.</div></details>
+<details class="faq-item"><summary>Est-ce vraiment gratuit ?</summary><div class="faq-answer">Oui. Le téléchargement et la recherche sont gratuits et illimités : vous voyez tout ce qui peut être retrouvé. La version gratuite vous permet de récupérer 3 fichiers, et vous profitez de 5 jours de version Pro offerts, sans carte bancaire. La version Pro récupère tout, sans limite.</div></details>
+<details class="faq-item"><summary>Est-ce que je vais retrouver mes fichiers ?</summary><div class="faq-answer">Les chances sont bonnes si le fichier a été supprimé récemment et si rien n'a été enregistré par-dessus depuis. Sur une clé USB, une carte SD ou un disque dur classique, on retrouve souvent la plupart des fichiers. Sur un disque « SSD », Windows efface vite les fichiers supprimés : aucun logiciel ne peut alors tout garantir. La recherche étant gratuite, vous savez avant de payer ce qui peut être récupéré.</div></details>
+<details class="faq-item"><summary>Pourquoi faut-il parfois une clé USB ?</summary><div class="faq-answer">Pour chercher en profondeur sur l'ordinateur, les fichiers retrouvés doivent être déposés ailleurs que sur le disque analysé, sinon ils risqueraient d'écraser ceux que vous cherchez encore. Une clé USB avec au moins 1 Go libre suffit. Sans clé, le logiciel cherche quand même dans la corbeille et les anciennes versions de Windows.</div></details>
+<details class="faq-item"><summary>Est-ce que ça marche sur mon ordinateur ?</summary><div class="faq-answer">SecureeTech Recovery fonctionne sur Windows 10 et Windows 11 (64 bits). Il n'existe pas de version pour Mac pour le moment.</div></details>
+<details class="faq-item"><summary>Windows me demande une autorisation à l'ouverture, est-ce normal ?</summary><div class="faq-answer">Oui. Pour lire les disques en profondeur, le logiciel a besoin des droits administrateur : Windows vous demande donc de confirmer. Le logiciel est signé numériquement au nom de son éditeur, H2OCONSULTING - FZCO.</div></details>
+<details class="faq-item"><summary>Mes fichiers sont-ils envoyés sur Internet ?</summary><div class="faq-answer">Non. La recherche et la récupération se font uniquement sur votre ordinateur. Seuls la clé de licence et un identifiant anonyme de l'ordinateur sont envoyés pour activer la version Pro.</div></details>
+<details class="faq-item"><summary>Est-ce que je peux résilier quand je veux ?</summary><div class="faq-answer">Oui. Vous pouvez résilier à tout moment, sans frais. Votre abonnement reste actif jusqu'à la fin de la période que vous avez déjà payée.</div></details>
+<details class="faq-item"><summary>L'abonnement se renouvelle-t-il tout seul ?</summary><div class="faq-answer">Oui, l'abonnement est renouvelé automatiquement par tacite reconduction. Vous pouvez le résilier avant l'échéance.</div></details>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Formulaire de rappel apres telechargement (SecureeTech) -->
+<div id="st-prospect" style="display:none;position:fixed;inset:0;background:rgba(14,1,29,.55);z-index:99999;align-items:center;justify-content:center;padding:16px">
+  <div style="position:relative;max-width:440px;width:100%;padding:22px 20px;border:2px solid #f07800;border-radius:14px;background:#fff;font-family:Arial,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.3)">
+    <button type="button" id="st-prospect-fermer" aria-label="Fermer" style="position:absolute;top:8px;right:12px;border:0;background:none;font-size:26px;cursor:pointer;color:#888">×</button>
+    <h3 style="margin:0 0 6px;font-size:21px;color:#2a0c52">Votre téléchargement a commencé ✅</h3>
+    <p style="margin:0 0 14px;font-size:16px">Besoin d'aide pour retrouver vos fichiers ? Un technicien SecureeTech vous rappelle <strong>gratuitement</strong>.</p>
+    <form id="st-prospect-form">
+      <input name="prenom" placeholder="Votre prénom" required="" style="width:100%;box-sizing:border-box;padding:11px;margin-bottom:8px;font-size:16px;border:1px solid #ccc;border-radius:6px">
+      <input name="telephone" type="tel" placeholder="Votre téléphone" required="" style="width:100%;box-sizing:border-box;padding:11px;margin-bottom:8px;font-size:16px;border:1px solid #ccc;border-radius:6px">
+      <input name="annee" type="number" min="1920" max="2010" placeholder="Votre année de naissance (ex. 1955)" required="" style="width:100%;box-sizing:border-box;padding:11px;margin-bottom:8px;font-size:16px;border:1px solid #ccc;border-radius:6px">
+      <input name="site" style="display:none" tabindex="-1" autocomplete="off">
+      <label style="display:flex;gap:8px;align-items:flex-start;font-size:14px;margin:6px 0 12px"><input type="checkbox" name="accord" value="1" required="" style="margin-top:3px"> J'accepte d'être rappelé(e) par SecureeTech au sujet de SecureeTech Recovery.</label>
+      <button type="submit" style="width:100%;padding:13px;font-size:17px;font-weight:bold;background:#f07800;color:#fff;border:0;border-radius:8px;cursor:pointer">Être rappelé gratuitement</button>
+    </form>
+    <p id="st-prospect-merci" style="display:none;font-size:17px;font-weight:bold;color:#1f9d55;margin:6px 0 0">Merci ! Un technicien vous rappelle très vite.</p>
+  </div>
+</div>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SecureeTech Recovery","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","description":"Logiciel de récupération de fichiers supprimés pour Windows : photos, documents et vidéos, sur l'ordinateur, une clé USB ou une carte SD. Recherche gratuite, abonnement Pro en option.","offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","name":"SecureeTech Recovery Gratuit"},{"@type":"Offer","price":"6.90","priceCurrency":"EUR","name":"SecureeTech Recovery Pro Mensuel"},{"@type":"Offer","price":"49.90","priceCurrency":"EUR","name":"SecureeTech Recovery Pro Annuel"},{"@type":"Offer","price":"89.90","priceCurrency":"EUR","name":"SecureeTech Recovery Pro 2 ans"}],"publisher":{"@type":"Organization","name":"H2OCONSULTING-FZCO","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qu'est-ce que SecureeTech Recovery ?", "acceptedAnswer": {"@type": "Answer", "text": "C'est un logiciel pour ordinateur Windows qui retrouve les fichiers supprimés par erreur — photos, documents, vidéos — sur l'ordinateur, une clé USB ou une carte SD. Il a été pensé pour être simple, même sans connaissances en informatique."}}, {"@type": "Question", "name": "Est-ce vraiment gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le téléchargement et la recherche sont gratuits et illimités : vous voyez tout ce qui peut être retrouvé. La version gratuite vous permet de récupérer 3 fichiers, et vous profitez de 5 jours de version Pro offerts, sans carte bancaire. La version Pro récupère tout, sans limite."}}, {"@type": "Question", "name": "Est-ce que je vais retrouver mes fichiers ?", "acceptedAnswer": {"@type": "Answer", "text": "Les chances sont bonnes si le fichier a été supprimé récemment et si rien n'a été enregistré par-dessus depuis. Sur une clé USB, une carte SD ou un disque dur classique, on retrouve souvent la plupart des fichiers. Sur un disque « SSD », Windows efface vite les fichiers supprimés : aucun logiciel ne peut alors tout garantir. La recherche étant gratuite, vous savez avant de payer ce qui peut être récupéré."}}, {"@type": "Question", "name": "Pourquoi faut-il parfois une clé USB ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour chercher en profondeur sur l'ordinateur, les fichiers retrouvés doivent être déposés ailleurs que sur le disque analysé, sinon ils risqueraient d'écraser ceux que vous cherchez encore. Une clé USB avec au moins 1 Go libre suffit. Sans clé, le logiciel cherche quand même dans la corbeille et les anciennes versions de Windows."}}, {"@type": "Question", "name": "Est-ce que ça marche sur mon ordinateur ?", "acceptedAnswer": {"@type": "Answer", "text": "SecureeTech Recovery fonctionne sur Windows 10 et Windows 11 (64 bits). Il n'existe pas de version pour Mac pour le moment."}}, {"@type": "Question", "name": "Windows me demande une autorisation à l'ouverture, est-ce normal ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Pour lire les disques en profondeur, le logiciel a besoin des droits administrateur : Windows vous demande donc de confirmer. Le logiciel est signé numériquement au nom de son éditeur, H2OCONSULTING - FZCO."}}, {"@type": "Question", "name": "Mes fichiers sont-ils envoyés sur Internet ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. La recherche et la récupération se font uniquement sur votre ordinateur. Seuls la clé de licence et un identifiant anonyme de l'ordinateur sont envoyés pour activer la version Pro."}}, {"@type": "Question", "name": "Est-ce que je peux résilier quand je veux ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Vous pouvez résilier à tout moment, sans frais. Votre abonnement reste actif jusqu'à la fin de la période que vous avez déjà payée."}}, {"@type": "Question", "name": "L'abonnement se renouvelle-t-il tout seul ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, l'abonnement est renouvelé automatiquement par tacite reconduction. Vous pouvez le résilier avant l'échéance."}}]}</script>
+</div>
+<!-- /wp:html -->
