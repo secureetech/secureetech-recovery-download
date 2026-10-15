@@ -9,4 +9,4 @@ Page officielle : https://secureetech.com — Assistance : 05 54 54 23 43 (du lu
 
 Édité par H2OCONSULTING - FZCO, Dubaï, Émirats arabes unis.
 
-Version actuelle : 1.0.3 — SHA-256 : 60aa6a0be51f28455b473158e0f701a1b45b82d3c6f119c5f0bd6e2d9c5beeaf
+Version actuelle : 1.0.4 — SHA-256 : 8c7a0b9bb18f1fab696f597a0f18e8c0971ffde37a7c43cac1e18c0ab94de82f
